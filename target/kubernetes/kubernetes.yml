@@ -3,8 +3,8 @@ apiVersion: v1
 kind: Service
 metadata:
   annotations:
-    app.quarkus.io/commit-id: 9d55bc302ecddc70a5f645e58a369696cc5b7d04
-    app.quarkus.io/build-timestamp: 2023-07-18 - 23:46:28 +0000
+    app.quarkus.io/commit-id: 17d97691e7d11ccd55336bd194ae905454e2044e
+    app.quarkus.io/build-timestamp: 2023-07-19 - 14:08:45 +0000
   labels:
     app.kubernetes.io/name: movie-library-app
     app.kubernetes.io/version: 1.0.0-SNAPSHOT
@@ -25,8 +25,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    app.quarkus.io/commit-id: 9d55bc302ecddc70a5f645e58a369696cc5b7d04
-    app.quarkus.io/build-timestamp: 2023-07-18 - 23:46:28 +0000
+    app.quarkus.io/commit-id: 17d97691e7d11ccd55336bd194ae905454e2044e
+    app.quarkus.io/build-timestamp: 2023-07-19 - 14:08:45 +0000
   labels:
     app.kubernetes.io/managed-by: quarkus
     app.kubernetes.io/name: movie-library-app
@@ -41,8 +41,8 @@ spec:
   template:
     metadata:
       annotations:
-        app.quarkus.io/commit-id: 9d55bc302ecddc70a5f645e58a369696cc5b7d04
-        app.quarkus.io/build-timestamp: 2023-07-18 - 23:46:28 +0000
+        app.quarkus.io/commit-id: 17d97691e7d11ccd55336bd194ae905454e2044e
+        app.quarkus.io/build-timestamp: 2023-07-19 - 14:08:45 +0000
       labels:
         app.kubernetes.io/managed-by: quarkus
         app.kubernetes.io/name: movie-library-app
@@ -54,9 +54,7 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.namespace
-            - name: JAVA_APP_JAR
-              value: /deployments/quarkus-run.jar
-          image: movie-library-app:1.0.0-SNAPSHOT
+          image: gtavares/movie-library-app:1.0.0-SNAPSHOT
           imagePullPolicy: Always
           name: movie-library-app
           ports:

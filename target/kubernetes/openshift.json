@@ -4,8 +4,8 @@
   "metadata" : {
     "annotations" : {
       "app.openshift.io/vcs-url" : "<<unknown>>",
-      "app.quarkus.io/commit-id" : "9d55bc302ecddc70a5f645e58a369696cc5b7d04",
-      "app.quarkus.io/build-timestamp" : "2023-07-18 - 23:59:29 +0000"
+      "app.quarkus.io/commit-id" : "17d97691e7d11ccd55336bd194ae905454e2044e",
+      "app.quarkus.io/build-timestamp" : "2023-07-19 - 14:12:06 +0000"
     },
     "labels" : {
       "app.kubernetes.io/name" : "movie-library-app",
@@ -50,8 +50,8 @@
   "metadata" : {
     "annotations" : {
       "app.openshift.io/vcs-url" : "<<unknown>>",
-      "app.quarkus.io/commit-id" : "9d55bc302ecddc70a5f645e58a369696cc5b7d04",
-      "app.quarkus.io/build-timestamp" : "2023-07-18 - 23:59:29 +0000"
+      "app.quarkus.io/commit-id" : "17d97691e7d11ccd55336bd194ae905454e2044e",
+      "app.quarkus.io/build-timestamp" : "2023-07-19 - 14:12:06 +0000"
     },
     "labels" : {
       "app.kubernetes.io/name" : "movie-library-app",
@@ -72,8 +72,8 @@
   "metadata" : {
     "annotations" : {
       "app.openshift.io/vcs-url" : "<<unknown>>",
-      "app.quarkus.io/commit-id" : "9d55bc302ecddc70a5f645e58a369696cc5b7d04",
-      "app.quarkus.io/build-timestamp" : "2023-07-18 - 23:59:29 +0000"
+      "app.quarkus.io/commit-id" : "17d97691e7d11ccd55336bd194ae905454e2044e",
+      "app.quarkus.io/build-timestamp" : "2023-07-19 - 14:12:06 +0000"
     },
     "labels" : {
       "app.kubernetes.io/name" : "movie-library-app",
@@ -108,14 +108,14 @@
   "metadata" : {
     "annotations" : {
       "app.openshift.io/vcs-url" : "<<unknown>>",
-      "app.quarkus.io/commit-id" : "9d55bc302ecddc70a5f645e58a369696cc5b7d04",
-      "app.quarkus.io/build-timestamp" : "2023-07-18 - 23:59:29 +0000"
+      "app.quarkus.io/commit-id" : "17d97691e7d11ccd55336bd194ae905454e2044e",
+      "app.quarkus.io/build-timestamp" : "2023-07-19 - 14:12:06 +0000"
     },
     "labels" : {
       "app.kubernetes.io/managed-by" : "quarkus",
       "app.openshift.io/runtime" : "quarkus",
-      "app.kubernetes.io/name" : "movie-library-app",
-      "app.kubernetes.io/version" : "1.0.0-SNAPSHOT"
+      "app.kubernetes.io/version" : "1.0.0-SNAPSHOT",
+      "app.kubernetes.io/name" : "movie-library-app"
     },
     "name" : "movie-library-app"
   },
@@ -123,22 +123,22 @@
     "replicas" : 1,
     "selector" : {
       "matchLabels" : {
-        "app.kubernetes.io/name" : "movie-library-app",
-        "app.kubernetes.io/version" : "1.0.0-SNAPSHOT"
+        "app.kubernetes.io/version" : "1.0.0-SNAPSHOT",
+        "app.kubernetes.io/name" : "movie-library-app"
       }
     },
     "template" : {
       "metadata" : {
         "annotations" : {
           "app.openshift.io/vcs-url" : "<<unknown>>",
-          "app.quarkus.io/commit-id" : "9d55bc302ecddc70a5f645e58a369696cc5b7d04",
-          "app.quarkus.io/build-timestamp" : "2023-07-18 - 23:59:29 +0000"
+          "app.quarkus.io/commit-id" : "17d97691e7d11ccd55336bd194ae905454e2044e",
+          "app.quarkus.io/build-timestamp" : "2023-07-19 - 14:12:06 +0000"
         },
         "labels" : {
           "app.kubernetes.io/managed-by" : "quarkus",
           "app.openshift.io/runtime" : "quarkus",
-          "app.kubernetes.io/name" : "movie-library-app",
-          "app.kubernetes.io/version" : "1.0.0-SNAPSHOT"
+          "app.kubernetes.io/version" : "1.0.0-SNAPSHOT",
+          "app.kubernetes.io/name" : "movie-library-app"
         }
       },
       "spec" : {
@@ -165,8 +165,8 @@
   "metadata" : {
     "annotations" : {
       "app.openshift.io/vcs-url" : "<<unknown>>",
-      "app.quarkus.io/commit-id" : "9d55bc302ecddc70a5f645e58a369696cc5b7d04",
-      "app.quarkus.io/build-timestamp" : "2023-07-18 - 23:59:29 +0000"
+      "app.quarkus.io/commit-id" : "17d97691e7d11ccd55336bd194ae905454e2044e",
+      "app.quarkus.io/build-timestamp" : "2023-07-19 - 14:12:06 +0000"
     },
     "labels" : {
       "app.kubernetes.io/name" : "movie-library-app",
