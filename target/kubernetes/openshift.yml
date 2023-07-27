@@ -4,8 +4,8 @@ kind: Service
 metadata:
   annotations:
     app.openshift.io/vcs-url: <<unknown>>
-    app.quarkus.io/commit-id: e389c9c78555222fea32b6aa7cd23c12975bf6f6
-    app.quarkus.io/build-timestamp: 2023-07-27 - 02:33:08 +0000
+    app.quarkus.io/commit-id: b05137d8d0b07d8f04d7507aad8924bb35a76c69
+    app.quarkus.io/build-timestamp: 2023-07-27 - 19:49:12 +0000
   labels:
     app.kubernetes.io/name: movie-library-app
     app.kubernetes.io/version: 1.0.0-SNAPSHOT
@@ -40,8 +40,8 @@ kind: ImageStream
 metadata:
   annotations:
     app.openshift.io/vcs-url: <<unknown>>
-    app.quarkus.io/commit-id: e389c9c78555222fea32b6aa7cd23c12975bf6f6
-    app.quarkus.io/build-timestamp: 2023-07-27 - 02:33:08 +0000
+    app.quarkus.io/commit-id: b05137d8d0b07d8f04d7507aad8924bb35a76c69
+    app.quarkus.io/build-timestamp: 2023-07-27 - 19:49:12 +0000
   labels:
     app.kubernetes.io/name: movie-library-app
     app.kubernetes.io/version: 1.0.0-SNAPSHOT
@@ -57,8 +57,8 @@ kind: BuildConfig
 metadata:
   annotations:
     app.openshift.io/vcs-url: <<unknown>>
-    app.quarkus.io/commit-id: e389c9c78555222fea32b6aa7cd23c12975bf6f6
-    app.quarkus.io/build-timestamp: 2023-07-27 - 02:33:08 +0000
+    app.quarkus.io/commit-id: b05137d8d0b07d8f04d7507aad8924bb35a76c69
+    app.quarkus.io/build-timestamp: 2023-07-27 - 19:49:12 +0000
   labels:
     app.kubernetes.io/name: movie-library-app
     app.kubernetes.io/version: 1.0.0-SNAPSHOT
@@ -83,8 +83,8 @@ kind: DeploymentConfig
 metadata:
   annotations:
     app.openshift.io/vcs-url: <<unknown>>
-    app.quarkus.io/commit-id: e389c9c78555222fea32b6aa7cd23c12975bf6f6
-    app.quarkus.io/build-timestamp: 2023-07-27 - 02:33:08 +0000
+    app.quarkus.io/commit-id: b05137d8d0b07d8f04d7507aad8924bb35a76c69
+    app.quarkus.io/build-timestamp: 2023-07-27 - 19:49:12 +0000
   labels:
     app.kubernetes.io/name: movie-library-app
     app.kubernetes.io/version: 1.0.0-SNAPSHOT
@@ -100,8 +100,8 @@ spec:
     metadata:
       annotations:
         app.openshift.io/vcs-url: <<unknown>>
-        app.quarkus.io/commit-id: e389c9c78555222fea32b6aa7cd23c12975bf6f6
-        app.quarkus.io/build-timestamp: 2023-07-27 - 02:33:08 +0000
+        app.quarkus.io/commit-id: b05137d8d0b07d8f04d7507aad8924bb35a76c69
+        app.quarkus.io/build-timestamp: 2023-07-27 - 19:49:12 +0000
       labels:
         app.kubernetes.io/managed-by: quarkus
         app.openshift.io/runtime: quarkus
