@@ -3,8 +3,8 @@
   "kind" : "Service",
   "metadata" : {
     "annotations" : {
-      "app.quarkus.io/commit-id" : "17d97691e7d11ccd55336bd194ae905454e2044e",
-      "app.quarkus.io/build-timestamp" : "2023-07-19 - 14:08:45 +0000"
+      "app.quarkus.io/commit-id" : "e389c9c78555222fea32b6aa7cd23c12975bf6f6",
+      "app.quarkus.io/build-timestamp" : "2023-07-27 - 02:33:08 +0000"
     },
     "labels" : {
       "app.kubernetes.io/name" : "movie-library-app",
@@ -31,8 +31,8 @@
   "kind" : "Deployment",
   "metadata" : {
     "annotations" : {
-      "app.quarkus.io/commit-id" : "17d97691e7d11ccd55336bd194ae905454e2044e",
-      "app.quarkus.io/build-timestamp" : "2023-07-19 - 14:08:45 +0000"
+      "app.quarkus.io/commit-id" : "e389c9c78555222fea32b6aa7cd23c12975bf6f6",
+      "app.quarkus.io/build-timestamp" : "2023-07-27 - 02:33:08 +0000"
     },
     "labels" : {
       "app.kubernetes.io/managed-by" : "quarkus",
@@ -52,8 +52,8 @@
     "template" : {
       "metadata" : {
         "annotations" : {
-          "app.quarkus.io/commit-id" : "17d97691e7d11ccd55336bd194ae905454e2044e",
-          "app.quarkus.io/build-timestamp" : "2023-07-19 - 14:08:45 +0000"
+          "app.quarkus.io/commit-id" : "e389c9c78555222fea32b6aa7cd23c12975bf6f6",
+          "app.quarkus.io/build-timestamp" : "2023-07-27 - 02:33:08 +0000"
         },
         "labels" : {
           "app.kubernetes.io/managed-by" : "quarkus",
