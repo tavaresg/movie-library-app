@@ -4,8 +4,8 @@ kind: Service
 metadata:
   annotations:
     app.openshift.io/vcs-url: <<unknown>>
-    app.quarkus.io/commit-id: 45fcbe3f473a0f70737257e566a2d3846a31dd28
-    app.quarkus.io/build-timestamp: 2023-08-15 - 15:34:12 +0000
+    app.quarkus.io/commit-id: 7926c96edeb71c840d542b6285cd6e4d2be88ad0
+    app.quarkus.io/build-timestamp: 2023-08-23 - 18:04:22 +0000
   labels:
     app.kubernetes.io/name: movie-library-app
     app.kubernetes.io/version: 1.0.0-SNAPSHOT
@@ -29,9 +29,9 @@ metadata:
   labels:
     app.kubernetes.io/name: movie-library-app
     app.kubernetes.io/version: 1.0.0-SNAPSHOT
-  name: openjdk-17
+  name: s2i-java
 spec:
-  dockerImageRepository: registry.access.redhat.com/ubi8/openjdk-17
+  dockerImageRepository: fabric8/s2i-java
   lookupPolicy:
     local: true
 ---
@@ -40,8 +40,8 @@ kind: ImageStream
 metadata:
   annotations:
     app.openshift.io/vcs-url: <<unknown>>
-    app.quarkus.io/commit-id: 45fcbe3f473a0f70737257e566a2d3846a31dd28
-    app.quarkus.io/build-timestamp: 2023-08-15 - 15:34:12 +0000
+    app.quarkus.io/commit-id: 7926c96edeb71c840d542b6285cd6e4d2be88ad0
+    app.quarkus.io/build-timestamp: 2023-08-23 - 18:04:22 +0000
   labels:
     app.kubernetes.io/name: movie-library-app
     app.kubernetes.io/version: 1.0.0-SNAPSHOT
@@ -57,8 +57,8 @@ kind: BuildConfig
 metadata:
   annotations:
     app.openshift.io/vcs-url: <<unknown>>
-    app.quarkus.io/commit-id: 45fcbe3f473a0f70737257e566a2d3846a31dd28
-    app.quarkus.io/build-timestamp: 2023-08-15 - 15:34:12 +0000
+    app.quarkus.io/commit-id: 7926c96edeb71c840d542b6285cd6e4d2be88ad0
+    app.quarkus.io/build-timestamp: 2023-08-23 - 18:04:22 +0000
   labels:
     app.kubernetes.io/name: movie-library-app
     app.kubernetes.io/version: 1.0.0-SNAPSHOT
@@ -76,41 +76,44 @@ spec:
     sourceStrategy:
       from:
         kind: ImageStreamTag
-        name: openjdk-17:1.16
+        name: s2i-java:2.3
 ---
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
 metadata:
   annotations:
     app.openshift.io/vcs-url: <<unknown>>
-    app.quarkus.io/commit-id: 45fcbe3f473a0f70737257e566a2d3846a31dd28
-    app.quarkus.io/build-timestamp: 2023-08-15 - 15:34:12 +0000
+    app.quarkus.io/commit-id: 7926c96edeb71c840d542b6285cd6e4d2be88ad0
+    app.quarkus.io/build-timestamp: 2023-08-23 - 18:04:22 +0000
   labels:
-    app.kubernetes.io/managed-by: quarkus
-    app.openshift.io/runtime: quarkus
     app.kubernetes.io/name: movie-library-app
     app.kubernetes.io/version: 1.0.0-SNAPSHOT
+    app.kubernetes.io/managed-by: quarkus
+    app.openshift.io/runtime: quarkus
   name: movie-library-app
 spec:
   replicas: 1
   selector:
-    matchLabels:
-      app.kubernetes.io/name: movie-library-app
-      app.kubernetes.io/version: 1.0.0-SNAPSHOT
+    app.kubernetes.io/version: 1.0.0-SNAPSHOT
+    app.kubernetes.io/name: movie-library-app
   template:
     metadata:
       annotations:
         app.openshift.io/vcs-url: <<unknown>>
-        app.quarkus.io/commit-id: 45fcbe3f473a0f70737257e566a2d3846a31dd28
-        app.quarkus.io/build-timestamp: 2023-08-15 - 15:34:12 +0000
+        app.quarkus.io/commit-id: 7926c96edeb71c840d542b6285cd6e4d2be88ad0
+        app.quarkus.io/build-timestamp: 2023-08-23 - 18:04:22 +0000
       labels:
         app.kubernetes.io/managed-by: quarkus
         app.openshift.io/runtime: quarkus
-        app.kubernetes.io/name: movie-library-app
         app.kubernetes.io/version: 1.0.0-SNAPSHOT
+        app.kubernetes.io/name: movie-library-app
     spec:
       containers:
         - env:
+            - name: KUBERNETES_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
             - name: JAVA_APP_JAR
               value: /deployments/quarkus-run.jar
           image: gtavares/movie-library-app:1.0.0-SNAPSHOT
@@ -120,23 +123,12 @@ spec:
             - containerPort: 8080
               name: http
               protocol: TCP
----
-apiVersion: route.openshift.io/v1
-kind: Route
-metadata:
-  annotations:
-    app.openshift.io/vcs-url: <<unknown>>
-    app.quarkus.io/commit-id: 45fcbe3f473a0f70737257e566a2d3846a31dd28
-    app.quarkus.io/build-timestamp: 2023-08-15 - 15:34:12 +0000
-  labels:
-    app.kubernetes.io/name: movie-library-app
-    app.kubernetes.io/version: 1.0.0-SNAPSHOT
-    app.kubernetes.io/managed-by: quarkus
-    app.openshift.io/runtime: quarkus
-  name: movie-library-app
-spec:
-  port:
-    targetPort: http
-  to:
-    kind: Service
-    name: movie-library-app
+  triggers:
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+          - movie-library-app
+        from:
+          kind: ImageStreamTag
+          name: movie-library-app:1.0.0-SNAPSHOT
+      type: ImageChange
