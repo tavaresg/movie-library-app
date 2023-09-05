@@ -11,6 +11,6 @@ public class Hello {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
-        return "Ola da minha API de Filmes v3.0 GrupoSC";
+        return "Ola da minha API de Filmes v1.0";
     }
 }
